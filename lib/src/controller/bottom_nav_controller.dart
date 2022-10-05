@@ -63,17 +63,16 @@ class BottomNavController extends GetxController {
       );
       print('exit!');
       return true;
-    } else {
+    } 
+    else {
       var page = PageName.values[bottomHistory.last];
       if (page == PageName.SEARCH) {
         var value = await searchPageNavigationkey.currentState!.maybePop();
         if (value) return false;
       }
-      print('go to before page');
       bottomHistory.removeLast();
       var index = bottomHistory.last;
       changeBottomNav(index, hasGesture: false);
-      print(bottomHistory);
       return false;
     }
   }

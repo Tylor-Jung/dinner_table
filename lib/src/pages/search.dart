@@ -49,7 +49,7 @@ class _SearchState extends State<Search> {
                 color: Colors.grey[200],
               ),
               child: Row(
-                children: [
+                children: const [
                   Icon(Icons.search),
                   Text(
                     '검색',

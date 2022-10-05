@@ -48,9 +48,9 @@ class _SearchFocusState extends State<SearchFocus>
       appBar: AppBar(
         elevation: 0,
         leading: GestureDetector(
-            onTap: BottomNavController.to.willPopAction,
-            child: Padding(
-              padding: const EdgeInsets.all(15),
+            onTap: Get.back,
+            child: const Padding(
+              padding: EdgeInsets.all(15),
               child: Icon(
                 Icons.arrow_back,
                 color: Colors.black,
@@ -58,7 +58,7 @@ class _SearchFocusState extends State<SearchFocus>
             )),
         titleSpacing: 0,
         title: Container(
-          margin: EdgeInsets.only(right: 15),
+          margin: const EdgeInsets.only(right: 15),
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(6), color: Colors.grey[200]),
           child: const TextField(
