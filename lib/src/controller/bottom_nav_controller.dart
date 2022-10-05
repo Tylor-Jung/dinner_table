@@ -1,18 +1,16 @@
 import 'dart:io';
 
-import 'package:dinner_table/src/controller/upload_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../components/message_pop_up.dart';
-import '../pages/upload_page.dart';
 
 enum PageName {
   HOME,
   SEARCH,
-  // UPLOAD,
   ACTIVITY,
-// MYPAGE
+  // UPLOAD,
+  // MYPAGE
 }
 
 class BottomNavController extends GetxController {
@@ -45,7 +43,6 @@ class BottomNavController extends GetxController {
     if (bottomHistory.last != value) {
       bottomHistory.add(value);
     }
-    print(bottomHistory);
   }
 
   Future<bool> willPopAction() async {
@@ -61,7 +58,6 @@ class BottomNavController extends GetxController {
           cancelCallback: Get.back,
         ),
       );
-      print('exit!');
       return true;
     } 
     else {

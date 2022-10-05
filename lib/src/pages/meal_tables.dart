@@ -1,7 +1,6 @@
+import 'package:dinner_table/src/components/meal_card.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-
-import '../components/meal_card.dart';
 
 class MealTables extends StatelessWidget {
   MealTables({super.key});
