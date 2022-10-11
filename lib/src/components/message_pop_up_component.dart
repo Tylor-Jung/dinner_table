@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 
 class MessagePopUp extends StatelessWidget {
@@ -28,7 +26,7 @@ class MessagePopUp extends StatelessWidget {
             Container(
               width: Get.width * 0.7,
               color: Colors.white,
-              padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
               child: Column(
                 children: [
                   Text(
@@ -39,7 +37,7 @@ class MessagePopUp extends StatelessWidget {
                       color: Colors.black,
                     ),
                   ),
-                  SizedBox(height: 7),
+                  const SizedBox(height: 7),
                   Text(
                     messgae!,
                     style: const TextStyle(
@@ -47,19 +45,18 @@ class MessagePopUp extends StatelessWidget {
                       color: Colors.black,
                     ),
                   ),
-                  SizedBox(height: 15),
+                  const SizedBox(height: 15),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      ElevatedButton(onPressed: okCallback, child: Text('확인')),
+                      ElevatedButton(
+                          onPressed: okCallback, child: const Text('확인')),
                       const SizedBox(width: 15),
                       ElevatedButton(
                         onPressed: cancelCallback,
-                        child: Text(
-                          '취소',
-                        ),
                         style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.grey),
+                        child:  const Text('취소'),
                       ),
                     ],
                   )

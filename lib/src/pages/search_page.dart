@@ -1,4 +1,5 @@
-import 'package:dinner_table/src/pages/home.dart';
+import 'package:dinner_table/src/data/random_menu/random_menu_data.dart';
+import 'package:dinner_table/src/pages/search_tap_pages/recomand_tap_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -20,10 +21,10 @@ class _SearchFocusState extends State<Search> with TickerProviderStateMixin {
 
   Widget _tapMenuOne(String menu) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 15),
+      padding: const EdgeInsets.symmetric(vertical: 15),
       child: Text(
         menu,
-        style: TextStyle(fontSize: 15, color: Colors.black),
+        style: const TextStyle(fontSize: 15, color: Colors.black),
       ),
     );
   }
@@ -32,7 +33,7 @@ class _SearchFocusState extends State<Search> with TickerProviderStateMixin {
     return TabBarView(
       controller: tapController,
       children: const [
-        Center(child: Text('준비중 입니다.')),
+        RecomandTapPage(),
         Center(child: Text('준비중 입니다.')),
         Center(child: Text('준비중 입니다.')),
         Center(child: Text('준비중 입니다.')),

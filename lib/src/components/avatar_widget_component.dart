@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
-enum AvatarType { TYPE1, TYPE2, TYPE3 }
+enum AvatarType { type1, type2, type3 }
 
 class AvatarWidget extends StatelessWidget {
   bool? hasStory;
@@ -19,7 +19,7 @@ class AvatarWidget extends StatelessWidget {
     this.size = 65,
   });
 
-  Widget type1Widget() {
+  type1Widget() {
     return Container(
       padding: const EdgeInsets.all(2),
       margin: const EdgeInsets.symmetric(horizontal: 5),
@@ -36,7 +36,7 @@ class AvatarWidget extends StatelessWidget {
 
   type2Widget() {
     return Container(
-      padding: EdgeInsets.all(2),
+      padding: const EdgeInsets.all(2),
       decoration: const BoxDecoration(
         shape: BoxShape.circle,
         color: Colors.white,
@@ -61,7 +61,7 @@ class AvatarWidget extends StatelessWidget {
         type1Widget(),
         Text(
           nickname ?? '',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
         )
       ],
     );
@@ -70,13 +70,12 @@ class AvatarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     switch (type) {
-      case AvatarType.TYPE1:
+      case AvatarType.type1:
         return type1Widget();
-      case AvatarType.TYPE2:
+      case AvatarType.type2:
         return type2Widget();
-      case AvatarType.TYPE3:
+      case AvatarType.type3:
         return type3Widget();
     }
-    return Container();
   }
 }

@@ -1,7 +1,7 @@
 import 'package:dinner_table/src/controller/bottom_nav_controller.dart';
-import 'package:dinner_table/src/pages/home.dart';
-import 'package:dinner_table/src/pages/meal_tables.dart';
-import 'package:dinner_table/src/pages/search.dart';
+import 'package:dinner_table/src/pages/home_page.dart';
+import 'package:dinner_table/src/pages/next_week_page.dart';
+import 'package:dinner_table/src/pages/search_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -25,8 +25,8 @@ class App extends GetView<BottomNavController> {
             children: [
               Home(),
               const Search(),
+              NextWeekPage(),
               // const Upload(),
-              MealTables(),
               // Container(child: Center(child: Text('MYPAGE'))),
             ],
           ),

@@ -1,4 +1,4 @@
-import 'package:dinner_table/src/components/weekly_meal_table.dart';
+import 'package:dinner_table/src/components/weekly_meal_table_component.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -8,6 +8,7 @@ class Home extends StatelessWidget {
   TextEditingController textEditingController = TextEditingController();
   var date = DateTime.now();
 
+  //홈 화면 헤더 타이틀 & 오늘 날짜 표시
   Widget _header() {
     return Padding(
       padding: const EdgeInsets.all(20),
@@ -21,7 +22,7 @@ class Home extends StatelessWidget {
           ),
           const SizedBox(height: 5),
           Text(
-            DateFormat('dd MMM, yyy').format(date),
+            DateFormat('dd MMM, yyy, E').format(date),
             style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w300),
           ),
           const SizedBox(height: 8),
@@ -33,17 +34,19 @@ class Home extends StatelessWidget {
     );
   }
 
+  // 이번주 식단표
   Widget _singleMealList() {
     return ClipRRect(
       child: Card(
         child: ListTile(
           title: _todayMeal(),
-          subtitle: _infoDescription(),
+          subtitle: _comments(),
         ),
       ),
     );
   }
 
+  // 오늘의 메뉴
   Widget _todayMeal() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -121,9 +124,10 @@ class Home extends StatelessWidget {
     );
   }
 
-  Widget _infoDescription() {
+  // 특별주문 사항
+  Widget _comments() {
     return Container(
-      padding: EdgeInsets.only(right: 10, left: 10, bottom: 20),
+      padding: const EdgeInsets.only(right: 10, left: 10, bottom: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -142,7 +146,7 @@ class Home extends StatelessWidget {
               errorBorder: InputBorder.none,
               disabledBorder: InputBorder.none,
             ),
-            style: TextStyle(fontSize: 15, color: Colors.black),
+            style: const TextStyle(fontSize: 15, color: Colors.black),
           ),
           // ExpandableText(
           //   '',
@@ -179,6 +183,7 @@ class Home extends StatelessWidget {
   //   );
   // }
 
+  // 이번주 식단표
   Widget _dinnerList() {
     return WeeklyMealTable();
   }

@@ -3,12 +3,12 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../components/message_pop_up.dart';
+import '../components/message_pop_up_component.dart';
 
 enum PageName {
-  HOME,
-  SEARCH,
-  ACTIVITY,
+  home,
+  search,
+  activity,
   // UPLOAD,
   // MYPAGE
 }
@@ -28,9 +28,9 @@ class BottomNavController extends GetxController {
       //     Get.put(UploadController());
       //   }));
       //   break;
-      case PageName.HOME:
-      case PageName.SEARCH:
-      case PageName.ACTIVITY:
+      case PageName.home:
+      case PageName.search:
+      case PageName.activity:
         // case PageName.MYPAGE:
         _chagePage(value, hasGesture: hasGesture);
         break;
@@ -62,7 +62,7 @@ class BottomNavController extends GetxController {
     } 
     else {
       var page = PageName.values[bottomHistory.last];
-      if (page == PageName.SEARCH) {
+      if (page == PageName.search) {
         var value = await searchPageNavigationkey.currentState!.maybePop();
         if (value) return false;
       }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class WeeklyMealTable extends StatelessWidget {
-  WeeklyMealTable({super.key});
+  const WeeklyMealTable({super.key});
 
   Widget _mealTable() {
     return Column(
@@ -57,51 +57,51 @@ class WeeklyMealTable extends StatelessWidget {
                   ),
                 ),
               ],
-              rows: const <DataRow>[
+              rows: const [
                 DataRow(
-                  cells: <DataCell>[
-                    DataCell(Text('월요일')),
+                  cells: [
+                    DataCell(Text('Mon')),
                     DataCell(Text('1111')),
                     DataCell(Text('1111')),
                     DataCell(Text('1111')),
                   ],
                 ),
                 DataRow(
-                  cells: <DataCell>[
-                    DataCell(Text('화요일')),
+                  cells: [
+                    DataCell(Text('Tue')),
                     DataCell(Text('2222')),
                     DataCell(Text('2222')),
                     DataCell(Text('2222')),
                   ],
                 ),
                 DataRow(
-                  cells: <DataCell>[
-                    DataCell(Text('수요일')),
+                  cells: [
+                    DataCell(Text('Wed')),
                     DataCell(Text('3333')),
                     DataCell(Text('3333')),
                     DataCell(Text('3333')),
                   ],
                 ),
                 DataRow(
-                  cells: <DataCell>[
-                    DataCell(Text('목요일')),
+                  cells: [
+                    DataCell(Text('Thu')),
                     DataCell(Text('4444')),
                     DataCell(Text('4444')),
                     DataCell(Text('4444')),
                   ],
                 ),
                 DataRow(
-                  cells: <DataCell>[
-                    DataCell(Text('금요일')),
+                  cells: [
+                    DataCell(Text('Fri')),
                     DataCell(Text('5555')),
                     DataCell(Text('5555')),
                     DataCell(Text('5555')),
                   ],
                 ),
                 DataRow(
-                  cells: <DataCell>[
+                  cells: [
                     DataCell(Text(
-                      '토요일',
+                      'Sat',
                       style: TextStyle(color: Colors.blue),
                     )),
                     DataCell(Text('6666')),
@@ -110,9 +110,9 @@ class WeeklyMealTable extends StatelessWidget {
                   ],
                 ),
                 DataRow(
-                  cells: <DataCell>[
+                  cells: [
                     DataCell(Text(
-                      '일요일',
+                      'Sun',
                       style: TextStyle(color: Colors.red),
                     )),
                     DataCell(Text('7777')),

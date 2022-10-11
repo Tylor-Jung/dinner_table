@@ -1,4 +1,4 @@
-import 'package:dinner_table/src/components/avatar_widget.dart';
+import 'package:dinner_table/src/components/avatar_widget_component.dart';
 import 'package:flutter/material.dart';
 
 class MealCard extends StatelessWidget {
@@ -27,7 +27,7 @@ class MealCard extends StatelessWidget {
               children: [
                 const SizedBox(height: 10),
                 AvatarWidget(
-                  type: AvatarType.TYPE2,
+                  type: AvatarType.type2,
                   thumbPath:
                       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdzJM4WPpBOa14pewi-aUC_8ItKbX_LU8dYw&usqp=CAU',
                   size: 80,
@@ -35,7 +35,7 @@ class MealCard extends StatelessWidget {
                 const SizedBox(height: 10),
                 Text(
                   descriotion!,
-                  style: TextStyle(fontSize: 13),
+                  style: const TextStyle(fontSize: 13),
                   textAlign: TextAlign.center,
                 ),
                 ElevatedButton(

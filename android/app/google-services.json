@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "823513046205",
+    "project_id": "dinner-table-project",
+    "storage_bucket": "dinner-table-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:823513046205:android:5e9fd51ed9c78bb106ebd4",
+        "android_client_info": {
+          "package_name": "com.example.dinner_table"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "823513046205-u2k0092d306al7b0j73vs47rj1efuv3f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBirrObfQAL1BH1pLYln_jXHAdB0fa4aNw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "823513046205-u2k0092d306al7b0j73vs47rj1efuv3f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

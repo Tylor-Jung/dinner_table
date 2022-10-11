@@ -1,6 +1,5 @@
 import 'package:expandable_text/expandable_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 class PostWidget extends StatelessWidget {
   const PostWidget({super.key});
@@ -9,8 +8,8 @@ class PostWidget extends StatelessWidget {
     return Padding(
         padding: const EdgeInsets.only(top: 15, left: 15),
         child: Container(
-          padding: EdgeInsets.only(bottom: 15),
-          child: Text(
+          padding: const EdgeInsets.only(bottom: 15),
+          child: const Text(
             '월요일',
             style: TextStyle(fontSize: 20),
           ),
@@ -33,10 +32,10 @@ class PostWidget extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 8),
                     child: Image.asset('assets/images/meal1.jpg'),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
-                  Text(
+                  const Text(
                     '메인메뉴',
                     style: TextStyle(fontSize: 18),
                   ),
@@ -49,10 +48,10 @@ class PostWidget extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 8),
                     child: Image.asset('assets/images/meal1.jpg'),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
-                  Text(
+                  const Text(
                     '사이드 메뉴 1',
                     style: TextStyle(fontSize: 18),
                   ),
@@ -65,10 +64,10 @@ class PostWidget extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 8),
                     child: Image.asset('assets/images/meal1.jpg'),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
-                  Text(
+                  const Text(
                     '사이드 메뉴 2',
                     style: TextStyle(fontSize: 18),
                   ),
@@ -89,7 +88,7 @@ class PostWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Row(
-            children: [
+            children: const [
               Icon(
                 Icons.thumb_up,
               ),
@@ -99,7 +98,7 @@ class PostWidget extends StatelessWidget {
               Icon(Icons.message),
             ],
           ),
-          Icon(Icons.bookmark),
+          const Icon(Icons.bookmark),
         ],
       ),
     );
@@ -148,7 +147,7 @@ class PostWidget extends StatelessWidget {
   }
 
   Widget _dataAgo() {
-    return Padding(
+    return const Padding(
       padding: EdgeInsets.symmetric(horizontal: 15),
       child: Text(
         '1일전',
@@ -160,8 +159,8 @@ class PostWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 8),
-      padding: EdgeInsets.symmetric(vertical: 10),
+      margin: const EdgeInsets.symmetric(vertical: 8),
+      padding: const EdgeInsets.symmetric(vertical: 10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         color: Colors.white,
