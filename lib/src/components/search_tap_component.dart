@@ -15,7 +15,7 @@ class SearchTapComponent extends StatelessWidget {
   final String? description;
   final String? thumbnail;
 
-  Widget _Thumbnail() {
+  Widget _thumbnail() {
     return SizedBox(
       width: 110,
       height: 110,
@@ -43,11 +43,9 @@ class SearchTapComponent extends StatelessWidget {
               ),
               ExpandableText(
                 description!,
-                style: TextStyle(color: Colors.grey),
+                style: const TextStyle(color: Colors.grey),
                 // prefixText: description,
-                onPrefixTap: () {
-                  print('유저 페이지 이동');
-                },
+                onPrefixTap: () {},
                 prefixStyle: const TextStyle(fontSize: 15),
                 expandText: '더보기',
                 collapseText: '접기',
@@ -72,7 +70,7 @@ class SearchTapComponent extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          _Thumbnail(),
+          _thumbnail(),
           const SizedBox(width: 15),
           _infoText(),
         ],

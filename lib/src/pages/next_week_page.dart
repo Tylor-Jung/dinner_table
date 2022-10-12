@@ -1,6 +1,8 @@
 import 'package:dinner_table/src/components/meal_card_component.dart';
-import 'package:dinner_table/src/data/random_menu/random_menu_data.dart';
+import 'package:dinner_table/src/data/menu_data/saved_menu_data.dart';
+import 'package:dinner_table/src/pages/set_random_page.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
 class NextWeekPage extends StatefulWidget {
@@ -85,23 +87,18 @@ class _NextWeekPageState extends State<NextWeekPage> {
     );
   }
 
-  Widget nextWeekPage() {
-    return Container(
-      margin: const EdgeInsets.only(top: 20, bottom: 50),
-      child: SingleChildScrollView(
-          scrollDirection: Axis.horizontal, child: randomMenuData()),
-    );
+  Widget _savedMenuData() {
+    return const SavedMenuDataTable();
   }
 
-  Widget _randomButton() {
-    return FloatingActionButton.extended(
-      onPressed: () {
-        setState(() {});
-      },
-      backgroundColor: Colors.purple,
-      icon: const Icon(Icons.shuffle_sharp),
-      label: const Text('랜덤조합'),
-    );
+  Widget _goToRandomMenuPageButton() {
+    return ElevatedButton.icon(
+        style: ElevatedButton.styleFrom(backgroundColor: Colors.deepPurple),
+        onPressed: () {
+          Get.to(SetRandomPage());
+        },
+        icon: const Icon(Icons.arrow_forward),
+        label: const Text('먹조합 하러가기'));
   }
 
   @override
@@ -114,11 +111,12 @@ class _NextWeekPageState extends State<NextWeekPage> {
             _header(),
             _findMealTables(),
             const SizedBox(height: 20),
-            nextWeekPage(),
+            _goToRandomMenuPageButton(),
+            const SizedBox(height: 10),
+            _savedMenuData(),
           ],
         ),
       ),
-      floatingActionButton: _randomButton(),
     );
   }
 }

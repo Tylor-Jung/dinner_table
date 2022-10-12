@@ -21,7 +21,7 @@ class PostWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         _header(''),
-        Container(
+        SizedBox(
           height: 220,
           child: ListView(
             scrollDirection: Axis.horizontal,
@@ -39,7 +39,7 @@ class PostWidget extends StatelessWidget {
                     '메인메뉴',
                     style: TextStyle(fontSize: 18),
                   ),
-                  Text('제육볶음'),
+                  const Text('제육볶음'),
                 ],
               ),
               Column(
@@ -55,7 +55,7 @@ class PostWidget extends StatelessWidget {
                     '사이드 메뉴 1',
                     style: TextStyle(fontSize: 18),
                   ),
-                  Text('제육볶음'),
+                  const Text('제육볶음'),
                 ],
               ),
               Column(
@@ -71,7 +71,7 @@ class PostWidget extends StatelessWidget {
                     '사이드 메뉴 2',
                     style: TextStyle(fontSize: 18),
                   ),
-                  Text('제육볶음'),
+                  const Text('제육볶음'),
                 ],
               ),
             ],
@@ -117,9 +117,7 @@ class PostWidget extends StatelessWidget {
           ExpandableText(
             '컨텐츠 1입니다. \n컨텐츠 1입니다. \n컨텐츠 1입니다. \n컨텐츠 1입니다. \n',
             // prefixText: '행복한 아빠\n',
-            onPrefixTap: () {
-              print('유저 페이지 이동');
-            },
+            onPrefixTap: () {},
             prefixStyle: const TextStyle(fontWeight: FontWeight.bold),
             expandText: '더보기',
             collapseText: '접기',

@@ -1,4 +1,3 @@
-import 'package:dinner_table/src/data/random_menu/random_menu_data.dart';
 import 'package:dinner_table/src/pages/search_tap_pages/recomand_tap_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

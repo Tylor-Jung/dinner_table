@@ -74,7 +74,7 @@ class Home extends StatelessWidget {
                     '메인메뉴',
                     style: TextStyle(fontSize: 18),
                   ),
-                  Text('제육볶음'),
+                  const Text('제육볶음'),
                 ],
               ),
               Column(
@@ -94,7 +94,7 @@ class Home extends StatelessWidget {
                     '사이드 메뉴 1',
                     style: TextStyle(fontSize: 18),
                   ),
-                  Text('미역국'),
+                  const Text('미역국'),
                 ],
               ),
               Column(
@@ -114,7 +114,7 @@ class Home extends StatelessWidget {
                     '사이드 메뉴 2',
                     style: TextStyle(fontSize: 18),
                   ),
-                  Text('달걀말이'),
+                  const Text('달걀말이'),
                 ],
               ),
             ],
@@ -167,21 +167,7 @@ class Home extends StatelessWidget {
     );
   }
 
-  // Widget _date(String date) {
-  //   return Container(
-  //     padding: EdgeInsets.only(top: 25, left: 25),
-  //     child: Row(
-  //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-  //       children: [
-  //         Text(
-  //           date,
-  //           style: TextStyle(fontSize: 20),
-  //         ),
-  //         IconButton(onPressed: () {}, icon: Icon(Icons.more_vert))
-  //       ],
-  //     ),
-  //   );
-  // }
+
 
   // 이번주 식단표
   Widget _dinnerList() {
