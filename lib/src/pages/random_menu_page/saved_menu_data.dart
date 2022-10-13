@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 class SavedMenuDataTable extends StatelessWidget {
   const SavedMenuDataTable({super.key});
 
+  // todo firestore에서 요일별 메뉴를 받아와야 함
+
   @override
   Widget build(BuildContext context) {
     return DataTable(
@@ -107,6 +109,5 @@ class SavedMenuDataTable extends StatelessWidget {
         ),
       ],
     );
-    
   }
 }

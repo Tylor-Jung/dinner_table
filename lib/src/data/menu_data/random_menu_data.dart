@@ -1,6 +1,10 @@
 import 'package:dinner_table/src/components/random_menu_component.dart';
+import 'package:dinner_table/src/pages/random_menu_page/save_menu_firestore.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
+
+// todo1: firestore에 요일별 메뉴등록
+// todo2: 요일별 메뉴 textformfield 형식으로 변환
 
 Widget randomMenuData() {
   final int mondayvalue = Random().nextInt(RandomMenu().randomMeal.length);
@@ -53,106 +57,51 @@ Widget randomMenuData() {
   final String sundaySide2 = RandomMenu().sideMenu2[sundayvalue2];
 // 일요일 랜덤 메뉴
 
-  return DataTable(
-    dividerThickness: 0,
-    dataRowHeight: 80,
-    columns: const <DataColumn>[
-      DataColumn(
-        label: Expanded(
-          child: Text(
-            'Date',
-            style: TextStyle(fontStyle: FontStyle.italic),
-          ),
-        ),
-      ),
-      DataColumn(
-        label: Expanded(
-          child: Text(
-            '메인메뉴',
-            style: TextStyle(fontStyle: FontStyle.italic),
-          ),
-        ),
-      ),
-      DataColumn(
-        label: Expanded(
-          child: Text(
-            '사이드 1',
-            style: TextStyle(fontStyle: FontStyle.italic),
-          ),
-        ),
-      ),
-      DataColumn(
-        label: Expanded(
-          child: Text(
-            '사이드 2',
-            style: TextStyle(fontStyle: FontStyle.italic),
-          ),
-        ),
-      ),
-    ],
-    rows: <DataRow>[
-      DataRow(
-        cells: <DataCell>[
-          const DataCell(Text('Mon')),
-          DataCell(Text(mondayMain)),
-          DataCell(Text(mondaySide1)),
-          DataCell(Text(mondaySide2)),
-        ],
-      ),
-      DataRow(
-        cells: <DataCell>[
-          const DataCell(Text('Tue')),
-          DataCell(Text(tuesdayMain)),
-          DataCell(Text(tuesdaySide1)),
-          DataCell(Text(tuesdaySide2)),
-        ],
-      ),
-      DataRow(
-        cells: <DataCell>[
-          const DataCell(Text('Wed')),
-          DataCell(Text(wednesdayMain)),
-          DataCell(Text(wednesdaySide1)),
-          DataCell(Text(wednesdaySide2)),
-        ],
-      ),
-      DataRow(
-        cells: <DataCell>[
-          const DataCell(Text('Thu')),
-          DataCell(Text(thursdayMain)),
-          DataCell(Text(thursdaySide1)),
-          DataCell(Text(thursdaySide2)),
-        ],
-      ),
-      DataRow(
-        cells: <DataCell>[
-          const DataCell(Text('Fri')),
-          DataCell(Text(fridayMain)),
-          DataCell(Text(fridaySide1)),
-          DataCell(Text(fridaySide2)),
-        ],
-      ),
-      DataRow(
-        cells: <DataCell>[
-          const DataCell(Text(
-            'Sat',
-            style: TextStyle(color: Colors.blue),
-          )),
-          DataCell(Text(saturdayMain)),
-          DataCell(Text(saturdaySide1)),
-          DataCell(Text(saturdaySide2)),
-        ],
-      ),
-      DataRow(
-        cells: <DataCell>[
-          const DataCell(Text(
-            'Sun',
-            style: TextStyle(color: Colors.red),
-          )),
-          DataCell(Text(sundayMain)),
-          DataCell(Text(sundaySide1)),
-          DataCell(Text(sundaySide2)),
-        ],
-      ),
-    ],
-  );
+  return randomMenuDataFirestore(
+      mondayMain,
+      mondaySide1,
+      mondaySide2,
+      tuesdayMain,
+      tuesdaySide1,
+      tuesdaySide2,
+      wednesdayMain,
+      wednesdaySide1,
+      wednesdaySide2,
+      thursdayMain,
+      thursdaySide1,
+      thursdaySide2,
+      fridayMain,
+      fridaySide1,
+      fridaySide2,
+      saturdayMain,
+      saturdaySide1,
+      saturdaySide2,
+      sundayMain,
+      sundaySide1,
+      sundaySide2);
+}
+
+SaveMenuFirestore randomMenuDataFirestore(
+    String mondayMain,
+    String mondaySide1,
+    String mondaySide2,
+    String tuesdayMain,
+    String tuesdaySide1,
+    String tuesdaySide2,
+    String wednesdayMain,
+    String wednesdaySide1,
+    String wednesdaySide2,
+    String thursdayMain,
+    String thursdaySide1,
+    String thursdaySide2,
+    String fridayMain,
+    String fridaySide1,
+    String fridaySide2,
+    String saturdayMain,
+    String saturdaySide1,
+    String saturdaySide2,
+    String sundayMain,
+    String sundaySide1,
+    String sundaySide2) {
+  return const SaveMenuFirestore();
 }

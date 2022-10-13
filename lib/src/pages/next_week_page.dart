@@ -1,12 +1,12 @@
 import 'package:dinner_table/src/components/meal_card_component.dart';
-import 'package:dinner_table/src/data/menu_data/saved_menu_data.dart';
+import 'package:dinner_table/src/pages/random_menu_page/saved_menu_data.dart';
 import 'package:dinner_table/src/pages/set_random_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
 class NextWeekPage extends StatefulWidget {
-  NextWeekPage({super.key});
+  const NextWeekPage({super.key});
 
   @override
   State<NextWeekPage> createState() => _NextWeekPageState();
@@ -95,7 +95,7 @@ class _NextWeekPageState extends State<NextWeekPage> {
     return ElevatedButton.icon(
         style: ElevatedButton.styleFrom(backgroundColor: Colors.deepPurple),
         onPressed: () {
-          Get.to(SetRandomPage());
+          Get.to(() => SetRandomPage());
         },
         icon: const Icon(Icons.arrow_forward),
         label: const Text('먹조합 하러가기'));
