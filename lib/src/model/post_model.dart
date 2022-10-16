@@ -1,5 +1,9 @@
 import 'package:dinner_table/src/model/user_model.dart';
 
+/**
+ * immutable과  mutable의 차이 
+ * Getter와 Setter
+ */
 class Post {
   final String? id;
   final String? thumbnail;
@@ -37,6 +41,7 @@ class Post {
   }
 
   factory Post.fromJson(String docId, Map<String, dynamic> json) {
+    // TODO: 무조건 try {} cath(error) {}로 감싸서 에러에 대한 부분을 항상 조심하기!ㅎ
     return Post(
       id: json['id'] == null ? '' : json['id'] as String,
       thumbnail: json['thumbnail'] == null ? '' : json['thumbnail'] as String,

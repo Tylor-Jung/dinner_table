@@ -37,6 +37,8 @@ class App extends GetView<BottomNavController> {
             currentIndex: controller.pageIndex.value,
             elevation: 0,
             onTap: controller.changeBottomNav,
+
+            /// TODO: IndexStack 으로 감싸줘야 한다.
             items: const [
               BottomNavigationBarItem(
                 icon: Icon(Icons.home_outlined),
