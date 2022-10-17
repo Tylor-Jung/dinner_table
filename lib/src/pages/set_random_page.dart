@@ -11,6 +11,7 @@ class SetRandomPage extends StatefulWidget {
 class _NextWeekPageState extends State<SetRandomPage> {
   var date = DateTime.now();
 
+  @override
   Widget _header() {
     return Padding(
       padding: const EdgeInsets.all(20),

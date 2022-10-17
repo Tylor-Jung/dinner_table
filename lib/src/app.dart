@@ -16,66 +16,63 @@ class App extends GetView<BottomNavController> {
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: controller.willPopAction,
-      child: Obx(
-        () => Scaffold(
-          body: IndexedStack(
-            index: controller.pageIndex.value,
-            children: [
-              Home(),
-              const Search(),
-              NextWeekPage(),
-              // const Upload(),
-              // Container(child: Center(child: Text('MYPAGE'))),
-            ],
-          ),
-          bottomNavigationBar: BottomNavigationBar(
-            type: BottomNavigationBarType.fixed,
-            showSelectedLabels: false,
-            showUnselectedLabels: false,
-            currentIndex: controller.pageIndex.value,
-            elevation: 0,
-            onTap: controller.changeBottomNav,
-            items: const [
-              BottomNavigationBarItem(
-                icon: Icon(Icons.home_outlined),
-                activeIcon: Icon(
-                  Icons.home,
-                  color: Colors.deepPurpleAccent,
-                ),
-                label: 'Home',
+    return Obx(
+      () => Scaffold(
+        body: IndexedStack(
+          index: controller.pageIndex.value,
+          children: [
+            Home(),
+            const Search(),
+            NextWeekPage(),
+            // const Upload(),
+            // Container(child: Center(child: Text('MYPAGE'))),
+          ],
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+          currentIndex: controller.pageIndex.value,
+          elevation: 0,
+          onTap: controller.changeBottomNav,
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home_outlined),
+              activeIcon: Icon(
+                Icons.home,
+                color: Colors.deepPurpleAccent,
               ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.search),
-                activeIcon: Icon(
-                  Icons.saved_search_outlined,
-                  color: Colors.deepPurpleAccent,
-                ),
-                label: 'Search',
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.search),
+              activeIcon: Icon(
+                Icons.saved_search_outlined,
+                color: Colors.deepPurpleAccent,
               ),
-              // BottomNavigationBarItem(
-              //   icon: Icon(Icons.soup_kitchen_rounded),
-              //   label: 'Upload',
-              // ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.star_border),
-                activeIcon: Icon(
-                  Icons.star,
-                  color: Colors.deepPurpleAccent,
-                ),
-                label: 'Meal Tables',
+              label: 'Search',
+            ),
+            // BottomNavigationBarItem(
+            //   icon: Icon(Icons.soup_kitchen_rounded),
+            //   label: 'Upload',
+            // ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.star_border),
+              activeIcon: Icon(
+                Icons.star,
+                color: Colors.deepPurpleAccent,
               ),
-              // BottomNavigationBarItem(
-              //   icon: Icon(Icons.person_outline),
-              //   activeIcon: Icon(
-              //     Icons.person,
-              //     color: Colors.deepPurpleAccent,
-              //   ),
-              //   label: 'My Page',
-              // ),
-            ],
-          ),
+              label: 'Meal Tables',
+            ),
+            // BottomNavigationBarItem(
+            //   icon: Icon(Icons.person_outline),
+            //   activeIcon: Icon(
+            //     Icons.person,
+            //     color: Colors.deepPurpleAccent,
+            //   ),
+            //   label: 'My Page',
+            // ),
+          ],
         ),
       ),
     );

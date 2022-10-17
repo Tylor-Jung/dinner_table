@@ -95,7 +95,7 @@ class _NextWeekPageState extends State<NextWeekPage> {
     return ElevatedButton.icon(
         style: ElevatedButton.styleFrom(backgroundColor: Colors.deepPurple),
         onPressed: () {
-          Get.to(SetRandomPage());
+          Get.to(() => SetRandomPage());
         },
         icon: const Icon(Icons.arrow_forward),
         label: const Text('먹조합 하러가기'));
