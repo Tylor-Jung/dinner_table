@@ -8,7 +8,6 @@ class SetRandomPage extends GetView<SaveController> {
   var date = DateTime.now();
   final _formKey = GlobalKey<FormState>();
   final saveController = Get.find<SaveController>();
-  final TextEditingController _addController = TextEditingController();
 
   Widget _header() {
     return Padding(
@@ -91,46 +90,41 @@ class SetRandomPage extends GetView<SaveController> {
                 DataRow(
                   cells: <DataCell>[
                     const DataCell(Text('Mon')),
-                    DataCell(Text(saveController.mealList[index].mondayMain)),
-                    DataCell(Text(saveController.mealList[index].mondaySide1)),
-                    DataCell(Text(saveController.mealList[index].mondaySide2)),
+                    DataCell(Text(saveController.mealList.toString())),
+                    DataCell(Text(saveController.mealList.toString())),
+                    DataCell(Text(saveController.mealList.toString())),
                   ],
                 ),
                 DataRow(
                   cells: <DataCell>[
                     const DataCell(Text('Tue')),
-                    DataCell(Text(saveController.mealList[index].tuesdayMain)),
-                    DataCell(Text(saveController.mealList[index].tuesdaySide1)),
-                    DataCell(Text(saveController.mealList[index].tuesdaySide2)),
+                    DataCell(Text(saveController.mealList.toString())),
+                    DataCell(Text(saveController.mealList.toString())),
+                    DataCell(Text(saveController.mealList.toString())),
                   ],
                 ),
                 DataRow(
                   cells: <DataCell>[
                     const DataCell(Text('Wed')),
-                    DataCell(
-                        Text(saveController.mealList[index].wednesdayMain)),
-                    DataCell(
-                        Text(saveController.mealList[index].wednesdaySide1)),
-                    DataCell(
-                        Text(saveController.mealList[index].wednesdaySide2)),
+                    DataCell(Text(saveController.mealList.toString())),
+                    DataCell(Text(saveController.mealList.toString())),
+                    DataCell(Text(saveController.mealList.toString())),
                   ],
                 ),
                 DataRow(
                   cells: <DataCell>[
                     const DataCell(Text('Thu')),
-                    DataCell(Text(saveController.mealList[index].thursdayMain)),
-                    DataCell(
-                        Text(saveController.mealList[index].thursdaySide1)),
-                    DataCell(
-                        Text(saveController.mealList[index].thursdaySide2)),
+                    DataCell(Text(saveController.mealList.toString())),
+                    DataCell(Text(saveController.mealList.toString())),
+                    DataCell(Text(saveController.mealList.toString())),
                   ],
                 ),
                 DataRow(
                   cells: <DataCell>[
                     const DataCell(Text('Fri')),
-                    DataCell(Text(saveController.mealList[index].fridayMain)),
-                    DataCell(Text(saveController.mealList[index].fridaySide1)),
-                    DataCell(Text(saveController.mealList[index].fridaySide2)),
+                    DataCell(Text(saveController.mealList.toString())),
+                    DataCell(Text(saveController.mealList.toString())),
+                    DataCell(Text(saveController.mealList.toString())),
                   ],
                 ),
                 DataRow(
@@ -139,11 +133,9 @@ class SetRandomPage extends GetView<SaveController> {
                       'Sat',
                       style: TextStyle(color: Colors.blue),
                     )),
-                    DataCell(Text(saveController.mealList[index].saturdayMain)),
-                    DataCell(
-                        Text(saveController.mealList[index].saturdaySide1)),
-                    DataCell(
-                        Text(saveController.mealList[index].saturdaySide2)),
+                    DataCell(Text(saveController.mealList.toString())),
+                    DataCell(Text(saveController.mealList.toString())),
+                    DataCell(Text(saveController.mealList.toString())),
                   ],
                 ),
                 DataRow(
@@ -152,9 +144,9 @@ class SetRandomPage extends GetView<SaveController> {
                       'Sun',
                       style: TextStyle(color: Colors.red),
                     )),
-                    DataCell(Text(saveController.mealList[index].sundayMain)),
-                    DataCell(Text(saveController.mealList[index].sundaySide1)),
-                    DataCell(Text(saveController.mealList[index].sundaySide2)),
+                    DataCell(Text(saveController.mealList.toString())),
+                    DataCell(Text(saveController.mealList.toString())),
+                    DataCell(Text(saveController.mealList.toString())),
                   ],
                 ),
               ],
@@ -180,7 +172,7 @@ class SetRandomPage extends GetView<SaveController> {
   Widget _randomButton() {
     return FloatingActionButton.extended(
       onPressed: () {
-        // setState(() {});
+        saveController.mealList.length;
       },
       backgroundColor: Colors.purple,
       icon: const Icon(Icons.shuffle_sharp),

@@ -4,8 +4,10 @@ import 'package:get/get.dart';
 import '../model/random_menu_model.dart';
 
 class SaveController extends GetxController {
+  static SaveController get to => Get.find();
   var isLoading = false;
-  final RxList mealList = <RandomMenuModel>[].obs;
+  final RxList<RandomMenuModel> mealList = <RandomMenuModel>[].obs;
+
   Future<void> saveNextWeek(
     String mondayMain,
     String mondaySide1,

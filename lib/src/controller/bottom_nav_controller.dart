@@ -1,9 +1,7 @@
-import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../components/message_pop_up_component.dart';
 
 enum PageName {
   home,

@@ -34,32 +34,32 @@ class RandomMenuModel {
   static int sundayvalue2 = _random;
 
   String? mondayMain = RandomMenu().randomMeal[mondayvalue];
-  String? mondaySide1 = RandomMenu().randomMeal[mondayvalue1];
-  String? mondaySide2 = RandomMenu().randomMeal[mondayvalue2];
+  String? mondaySide1 = RandomMenu().sideMenu1[mondayvalue1];
+  String? mondaySide2 = RandomMenu().sideMenu2[mondayvalue2];
 // 월요일 랜덤 메뉴
   String? tuesdayMain = RandomMenu().randomMeal[tuesdayvalue];
-  String? tuesdaySide1 = RandomMenu().randomMeal[tuesdayvalue1];
-  String? tuesdaySide2 = RandomMenu().randomMeal[tuesdayvalue2];
+  String? tuesdaySide1 = RandomMenu().sideMenu1[tuesdayvalue1];
+  String? tuesdaySide2 = RandomMenu().sideMenu2[tuesdayvalue2];
 // 화요일 랜덤 메뉴
   String? wednesdayMain = RandomMenu().randomMeal[wednesdayvalue];
-  String? wednesdaySide1 = RandomMenu().randomMeal[wednesdayvalue1];
-  String? wednesdaySide2 = RandomMenu().randomMeal[wednesdayvalue2];
+  String? wednesdaySide1 = RandomMenu().sideMenu1[wednesdayvalue1];
+  String? wednesdaySide2 = RandomMenu().sideMenu2[wednesdayvalue2];
 // 수요일 랜덤 메뉴
   String? thursdayMain = RandomMenu().randomMeal[thursdayvalue];
-  String? thursdaySide1 = RandomMenu().randomMeal[thursdayvalue1];
-  String? thursdaySide2 = RandomMenu().randomMeal[thursdayvalue2];
+  String? thursdaySide1 = RandomMenu().sideMenu1[thursdayvalue1];
+  String? thursdaySide2 = RandomMenu().sideMenu2[thursdayvalue2];
 // 목요일 랜덤 메뉴
   String? fridayMain = RandomMenu().randomMeal[fridayvalue];
-  String? fridaySide1 = RandomMenu().randomMeal[fridayvalue1];
-  String? fridaySide2 = RandomMenu().randomMeal[fridayvalue2];
+  String? fridaySide1 = RandomMenu().sideMenu1[fridayvalue1];
+  String? fridaySide2 = RandomMenu().sideMenu2[fridayvalue2];
 // 금요일 랜덤 메뉴
   String? saturdayMain = RandomMenu().randomMeal[saturdayvalue];
-  String? saturdaySide1 = RandomMenu().randomMeal[saturdayvalue1];
-  String? saturdaySide2 = RandomMenu().randomMeal[saturdayvalue2];
+  String? saturdaySide1 = RandomMenu().sideMenu1[saturdayvalue1];
+  String? saturdaySide2 = RandomMenu().sideMenu2[saturdayvalue2];
 // 토요일 랜덤 메뉴
   String? sundayMain = RandomMenu().randomMeal[sundayvalue];
-  String? sundaySide1 = RandomMenu().randomMeal[sundayvalue1];
-  String? sundaySide2 = RandomMenu().randomMeal[sundayvalue2];
+  String? sundaySide1 = RandomMenu().sideMenu1[sundayvalue1];
+  String? sundaySide2 = RandomMenu().sideMenu2[sundayvalue2];
 
 // 일요일 랜덤 메뉴
 
