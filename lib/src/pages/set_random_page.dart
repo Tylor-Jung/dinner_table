@@ -1,17 +1,15 @@
-import 'package:dinner_table/src/data/menu_data/random_menu_data.dart';
+import 'package:dinner_table/src/controller/save_menu_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class SetRandomPage extends StatefulWidget {
+class SetRandomPage extends GetView<SaveController> {
   SetRandomPage({super.key});
 
-  @override
-  State<SetRandomPage> createState() => _NextWeekPageState();
-}
-
-class _NextWeekPageState extends State<SetRandomPage> {
   var date = DateTime.now();
+  final _formKey = GlobalKey<FormState>();
+  final saveController = Get.find<SaveController>();
+  final TextEditingController _addController = TextEditingController();
 
-  @override
   Widget _header() {
     return Padding(
       padding: const EdgeInsets.all(20),
@@ -45,11 +43,124 @@ class _NextWeekPageState extends State<SetRandomPage> {
   }
 
   Widget _nextWeekPage() {
-    return Container(
-      margin: const EdgeInsets.only(top: 20, bottom: 50),
-      child: SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
-        child: randomMenuData(),
+    return Obx(
+      () => Container(
+        margin: const EdgeInsets.only(top: 20, bottom: 50),
+        child: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Form(
+            key: _formKey,
+            child: DataTable(
+              dividerThickness: 0,
+              dataRowHeight: 80,
+              columns: const <DataColumn>[
+                DataColumn(
+                  label: Expanded(
+                    child: Text(
+                      'Date',
+                      style: TextStyle(fontStyle: FontStyle.italic),
+                    ),
+                  ),
+                ),
+                DataColumn(
+                  label: Expanded(
+                    child: Text(
+                      '메인메뉴',
+                      style: TextStyle(fontStyle: FontStyle.italic),
+                    ),
+                  ),
+                ),
+                DataColumn(
+                  label: Expanded(
+                    child: Text(
+                      '사이드 1',
+                      style: TextStyle(fontStyle: FontStyle.italic),
+                    ),
+                  ),
+                ),
+                DataColumn(
+                  label: Expanded(
+                    child: Text(
+                      '사이드 2',
+                      style: TextStyle(fontStyle: FontStyle.italic),
+                    ),
+                  ),
+                ),
+              ],
+              rows: <DataRow>[
+                DataRow(
+                  cells: <DataCell>[
+                    const DataCell(Text('Mon')),
+                    DataCell(Text(saveController.mealList[index].mondayMain)),
+                    DataCell(Text(saveController.mealList[index].mondaySide1)),
+                    DataCell(Text(saveController.mealList[index].mondaySide2)),
+                  ],
+                ),
+                DataRow(
+                  cells: <DataCell>[
+                    const DataCell(Text('Tue')),
+                    DataCell(Text(saveController.mealList[index].tuesdayMain)),
+                    DataCell(Text(saveController.mealList[index].tuesdaySide1)),
+                    DataCell(Text(saveController.mealList[index].tuesdaySide2)),
+                  ],
+                ),
+                DataRow(
+                  cells: <DataCell>[
+                    const DataCell(Text('Wed')),
+                    DataCell(
+                        Text(saveController.mealList[index].wednesdayMain)),
+                    DataCell(
+                        Text(saveController.mealList[index].wednesdaySide1)),
+                    DataCell(
+                        Text(saveController.mealList[index].wednesdaySide2)),
+                  ],
+                ),
+                DataRow(
+                  cells: <DataCell>[
+                    const DataCell(Text('Thu')),
+                    DataCell(Text(saveController.mealList[index].thursdayMain)),
+                    DataCell(
+                        Text(saveController.mealList[index].thursdaySide1)),
+                    DataCell(
+                        Text(saveController.mealList[index].thursdaySide2)),
+                  ],
+                ),
+                DataRow(
+                  cells: <DataCell>[
+                    const DataCell(Text('Fri')),
+                    DataCell(Text(saveController.mealList[index].fridayMain)),
+                    DataCell(Text(saveController.mealList[index].fridaySide1)),
+                    DataCell(Text(saveController.mealList[index].fridaySide2)),
+                  ],
+                ),
+                DataRow(
+                  cells: <DataCell>[
+                    const DataCell(Text(
+                      'Sat',
+                      style: TextStyle(color: Colors.blue),
+                    )),
+                    DataCell(Text(saveController.mealList[index].saturdayMain)),
+                    DataCell(
+                        Text(saveController.mealList[index].saturdaySide1)),
+                    DataCell(
+                        Text(saveController.mealList[index].saturdaySide2)),
+                  ],
+                ),
+                DataRow(
+                  cells: <DataCell>[
+                    const DataCell(Text(
+                      'Sun',
+                      style: TextStyle(color: Colors.red),
+                    )),
+                    DataCell(Text(saveController.mealList[index].sundayMain)),
+                    DataCell(Text(saveController.mealList[index].sundaySide1)),
+                    DataCell(Text(saveController.mealList[index].sundaySide2)),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }
@@ -57,7 +168,10 @@ class _NextWeekPageState extends State<SetRandomPage> {
   Widget _saveButton() {
     return ElevatedButton.icon(
       style: ElevatedButton.styleFrom(backgroundColor: Colors.deepPurple),
-      onPressed: () {},
+      onPressed: () {
+        // firestore에 값 저장
+        // saveController.saveNextWeek(saveController.main.value, side1, side2);
+      },
       icon: const Icon(Icons.soup_kitchen),
       label: const Text('저장하기'),
     );
@@ -66,7 +180,7 @@ class _NextWeekPageState extends State<SetRandomPage> {
   Widget _randomButton() {
     return FloatingActionButton.extended(
       onPressed: () {
-        setState(() {});
+        // setState(() {});
       },
       backgroundColor: Colors.purple,
       icon: const Icon(Icons.shuffle_sharp),
@@ -76,18 +190,24 @@ class _NextWeekPageState extends State<SetRandomPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            _header(),
-            _saveButton(),
-            _nextWeekPage(),
-          ],
-        ),
-      ),
-      floatingActionButton: _randomButton(),
-    );
+    return GetBuilder<SaveController>(
+        init: SaveController(),
+        initState: (_) {},
+        builder: (saveController) {
+          saveController.getData();
+          return Scaffold(
+            backgroundColor: Colors.white,
+            body: SingleChildScrollView(
+              child: Column(
+                children: [
+                  _header(),
+                  _saveButton(),
+                  _nextWeekPage(),
+                ],
+              ),
+            ),
+            floatingActionButton: _randomButton(),
+          );
+        });
   }
 }
