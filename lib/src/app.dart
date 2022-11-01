@@ -1,7 +1,6 @@
 import 'package:dinner_table/src/controller/bottom_nav_controller.dart';
 import 'package:dinner_table/src/pages/home_page.dart';
 import 'package:dinner_table/src/pages/next_week_page.dart';
-import 'package:dinner_table/src/pages/search_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -22,10 +21,7 @@ class App extends GetView<BottomNavController> {
           index: controller.pageIndex.value,
           children: [
             Home(),
-            const Search(),
             NextWeekPage(),
-            // const Upload(),
-            // Container(child: Center(child: Text('MYPAGE'))),
           ],
         ),
         bottomNavigationBar: BottomNavigationBar(
@@ -45,18 +41,6 @@ class App extends GetView<BottomNavController> {
               label: 'Home',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.search),
-              activeIcon: Icon(
-                Icons.saved_search_outlined,
-                color: Colors.deepPurpleAccent,
-              ),
-              label: 'Search',
-            ),
-            // BottomNavigationBarItem(
-            //   icon: Icon(Icons.soup_kitchen_rounded),
-            //   label: 'Upload',
-            // ),
-            BottomNavigationBarItem(
               icon: Icon(Icons.star_border),
               activeIcon: Icon(
                 Icons.star,
@@ -64,14 +48,6 @@ class App extends GetView<BottomNavController> {
               ),
               label: 'Meal Tables',
             ),
-            // BottomNavigationBarItem(
-            //   icon: Icon(Icons.person_outline),
-            //   activeIcon: Icon(
-            //     Icons.person,
-            //     color: Colors.deepPurpleAccent,
-            //   ),
-            //   label: 'My Page',
-            // ),
           ],
         ),
       ),

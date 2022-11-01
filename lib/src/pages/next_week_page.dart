@@ -1,18 +1,11 @@
-import 'package:dinner_table/src/components/meal_card_component.dart';
-import 'package:dinner_table/src/data/menu_data/saved_menu_data.dart';
-import 'package:dinner_table/src/pages/set_random_page.dart';
+import 'package:dinner_table/src/components/dropdown_button.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+import 'package:get/get.dart';
 
-class NextWeekPage extends StatefulWidget {
+class NextWeekPage extends StatelessWidget {
   NextWeekPage({super.key});
-
-  @override
-  State<NextWeekPage> createState() => _NextWeekPageState();
-}
-
-class _NextWeekPageState extends State<NextWeekPage> {
+  TextEditingController _textEditingController = TextEditingController();
   var date = DateTime.now();
 
   Widget _header() {
@@ -47,58 +40,29 @@ class _NextWeekPageState extends State<NextWeekPage> {
     );
   }
 
-  Widget _findMealTables() {
-    return Column(
+  Widget _dailogContent() {
+    return Row(
       children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              Text(
-                '내가 찜한 메뉴 리스트',
-                style: TextStyle(fontSize: 15, color: Colors.black),
-              ),
-              Text(
-                '모두 보기 >',
-                style: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.deepPurple),
-              ),
-            ],
-          ),
-        ),
-        SingleChildScrollView(
-          padding: const EdgeInsets.symmetric(horizontal: 12),
-          scrollDirection: Axis.horizontal,
-          child: Row(
+        Expanded(
+          child: Column(
             children: [
-              ...List.generate(
-                10,
-                (index) => MealCard(descriotion: '"$index"를 추가 하시겠습니까?'),
-              ),
+              TextFormField(
+                controller: _textEditingController,
+                decoration: const InputDecoration(
+                    hintText: '메뉴를 입력하세요.',
+                    hintStyle: TextStyle(color: Colors.grey)),
+              )
             ],
           ),
         ),
-        const SizedBox(height: 15),
-        const Divider(thickness: 1),
+        const SizedBox(width: 20),
+        Column(
+          children: [
+            DropDownButtonWidget(),
+          ],
+        ),
       ],
     );
-  }
-
-  Widget _savedMenuData() {
-    return const SavedMenuDataTable();
-  }
-
-  Widget _goToRandomMenuPageButton() {
-    return ElevatedButton.icon(
-        style: ElevatedButton.styleFrom(backgroundColor: Colors.deepPurple),
-        onPressed: () {
-          Get.to(() => SetRandomPage());
-        },
-        icon: const Icon(Icons.arrow_forward),
-        label: const Text('먹조합 하러가기'));
   }
 
   @override
@@ -109,13 +73,23 @@ class _NextWeekPageState extends State<NextWeekPage> {
         child: Column(
           children: [
             _header(),
-            _findMealTables(),
             const SizedBox(height: 20),
-            _goToRandomMenuPageButton(),
-            const SizedBox(height: 10),
-            _savedMenuData(),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Get.defaultDialog(
+            content: _dailogContent(),
+            title: '뭐먹을건데?',
+            textCancel: '취소',
+            textConfirm: '확인',
+            barrierDismissible: false,
+            radius: 0,
+            onConfirm: () {},
+          );
+        },
+        child: const Icon(Icons.add),
       ),
     );
   }

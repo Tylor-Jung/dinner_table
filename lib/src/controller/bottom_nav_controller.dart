@@ -1,14 +1,9 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-
 enum PageName {
   home,
-  search,
   activity,
-  // UPLOAD,
-  // MYPAGE
 }
 
 class BottomNavController extends GetxController {
@@ -21,15 +16,8 @@ class BottomNavController extends GetxController {
   void changeBottomNav(int value, {bool hasGesture = true}) {
     var page = PageName.values[value];
     switch (page) {
-      // case PageName.UPLOAD:
-      //   Get.to(() => Upload(), binding: BindingsBuilder(() {
-      //     Get.put(UploadController());
-      //   }));
-      //   break;
       case PageName.home:
-      case PageName.search:
       case PageName.activity:
-        // case PageName.MYPAGE:
         _chagePage(value, hasGesture: hasGesture);
         break;
     }
@@ -42,32 +30,4 @@ class BottomNavController extends GetxController {
       bottomHistory.add(value);
     }
   }
-
-  // Future<bool> willPopAction() async {
-  //   if (bottomHistory.length == 1) {
-  //     showDialog(
-  //       context: Get.context!,
-  //       builder: (context) => MessagePopUp(
-  //         title: '시스템',
-  //         messgae: '종료하시겠습니까?',
-  //         okCallback: () {
-  //           exit(0);
-  //         },
-  //         cancelCallback: Get.back,
-  //       ),
-  //     );
-  //     return true;
-  //   } 
-  //   else {
-  //     var page = PageName.values[bottomHistory.last];
-  //     if (page == PageName.search) {
-  //       var value = await searchPageNavigationkey.currentState!.maybePop();
-  //       if (value) return false;
-  //     }
-  //     bottomHistory.removeLast();
-  //     var index = bottomHistory.last;
-  //     changeBottomNav(index, hasGesture: false);
-  //     return false;
-  //   }
-  // }
 }

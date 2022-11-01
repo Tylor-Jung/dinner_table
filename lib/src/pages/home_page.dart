@@ -148,26 +148,10 @@ class Home extends StatelessWidget {
             ),
             style: const TextStyle(fontSize: 15, color: Colors.black),
           ),
-          // ExpandableText(
-          //   '',
-          //   // prefixText: '행복한 아빠\n',
-          //   // onPrefixTap: () {
-          //   //   print('유저 페이지 이동');
-          //   // },
-          //   prefixStyle: TextStyle(fontWeight: FontWeight.bold),
-          //   expandText: '더보기',
-          //   collapseText: '접기',
-          //   maxLines: 3,
-          //   expandOnTextTap: true,
-          //   collapseOnTextTap: true,
-          //   linkColor: Colors.grey,
-          // )
         ],
       ),
     );
   }
-
-
 
   // 이번주 식단표
   Widget _dinnerList() {
@@ -180,7 +164,6 @@ class Home extends StatelessWidget {
       body: ListView(
         children: [
           _header(),
-          _singleMealList(),
           _dinnerList(),
         ],
       ),
