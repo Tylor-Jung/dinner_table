@@ -13,7 +13,7 @@ class DropDownButtonWidget extends GetView<DropdownButtonController> {
           controller.changeDropdownMenu(value!);
         },
         value: controller.index.value,
-        items: [
+        items:const [
           DropdownMenuItem(
             value: 0,
             child: Text('월요일'),
