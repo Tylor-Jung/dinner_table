@@ -100,6 +100,19 @@ class _NextWeekPageState extends State<NextWeekPage> {
     );
   }
 
+  deleteDialog(MenuController menuController, String title, String id) async {
+    await Get.defaultDialog(
+      title: title,
+      middleText: '메뉴를 삭제하시겠습니까?',
+      textCancel: '취소',
+      textConfirm: '삭제',
+      onConfirm: () {
+        MenuController().deleteMenu(id);
+        Get.back();
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return GetBuilder<MenuController>(
@@ -142,9 +155,10 @@ class _NextWeekPageState extends State<NextWeekPage> {
                                         icon: const Icon(Icons.edit),
                                       ),
                                       IconButton(
-                                        onPressed: () => menuController
-                                            .deleteMenu(menuController
-                                                .menuList[index].id),
+                                        onPressed: () => deleteDialog(
+                                            menuController,
+                                            'Delete Menu',
+                                            menuController.menuList[index].id),
                                         icon: const Icon(
                                           Icons.delete,
                                           color: Colors.red,
